@@ -23,7 +23,7 @@ public class Hotel {
         this.isOpen = isOpen;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
