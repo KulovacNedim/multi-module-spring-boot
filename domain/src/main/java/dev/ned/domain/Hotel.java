@@ -9,12 +9,12 @@ import javax.persistence.Id;
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-    private String name;
-    private int classification;
-    private boolean isOpen;
+    public Long id;
+    public String name;
+    public int classification;
+    public boolean isOpen;
 
-    protected Hotel() {
+    public Hotel() {
     }
 
     public Hotel(String name, int classification, boolean isOpen) {
@@ -27,15 +27,41 @@ public class Hotel {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", classification=" + classification +
+                ", isOpen=" + isOpen +
+                '}';
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getClassification() {
         return classification;
     }
 
+    public void setClassification(int classification) {
+        this.classification = classification;
+    }
+
     public boolean isOpen() {
         return isOpen;
+    }
+
+    public void setOpen(boolean open) {
+        isOpen = open;
     }
 }

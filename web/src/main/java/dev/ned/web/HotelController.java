@@ -16,7 +16,8 @@ public class HotelController {
     }
 
     @GetMapping("/hotels")
-    public List<Hotel> getHotels() {
+        public List<Hotel> getHotels() {
         return this.hotelRepository.findAll();
     }
+
 }
