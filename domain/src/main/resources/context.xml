@@ -1,0 +1,14 @@
+<bean id="gsonHttpMessageConverter" class="org.springframework.http.converter.json.GsonHttpMessageConverter"/>
+
+<bean id="handlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+<mvc:annotation-driven />
+<property name="messageConverters">
+    <list>
+        <ref bean="gsonHttpMessageConverter"/>
+        <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+        <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+        <bean class="org.springframework.http.converter.FormHttpMessageConverter"/>
+        <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+    </list>
+</property>
+</bean>
